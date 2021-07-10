@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json({extended:true}));
 
 //app's port
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 
 //import routes
 app.use('/api/usuarios', require('./routes/usuarios'));
@@ -22,6 +22,6 @@ app.use('/api/proyectos', require('./routes/proyectos'));
 app.use('/api/tareas', require('./routes/tareas'));
 
 //start app
-app.listen(PORT, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 })
